@@ -10,21 +10,24 @@
 <body>
     <div class= contrainer>
         <div id= content class= container>
-            <h1>My Planner</h5>
+            <h1>My Planner</h1>
+            <h5>Some more text here</h5>
+            <h5 id= today></h5>
         </div>
         <div id= monday class= container class= day>
             <div class="row">
                 <div class="col-11">
-                    <textarea class= "col-sm-12 width-100"></textarea>
+                    <input id= "9am" type="text" class= "col-sm-12 width-100"></input>
                 </div>
                 <div class="col-1">
-                    <button class="save" type="button">Save</button>
+                    <button class="save" type="submit">Save</button>
                 </div>
 
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
-    <script src="https://momentjs.com/"></script>
 </body>
 </html>
