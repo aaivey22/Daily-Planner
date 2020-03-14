@@ -14,14 +14,18 @@ loadPlanner();
 function loadPlanner() {
     $("#9am").val(localStorage.nine);
 }
-
-$(".save").on("click", function (event) {
-    // event.preventDefault();
-
+$("#save9").on("click", function (event) {
     var userInput = $("#9am").val().trim();
-localStorage.setItem("nine", userInput);
-
-    // console.log(localStorage);
+    localStorage.setItem("nine", userInput); // console.log(localStorage); 
 });
-console.log(localStorage.getItem("nine"));
-// localStorage.getItem("9");
+localStorage.getItem("nine"); // console.log(localStorage.getItem("nine"));
+
+
+// function loadPlanner() {
+//     $("#10am").val(localStorage.ten);
+// }
+// $("#save10").on("click", function (event) {
+//     var userInput = $("#10am").val().trim();
+//     localStorage.setItem("ten", userInput);
+// });
+// localStorage.getItem("ten");
