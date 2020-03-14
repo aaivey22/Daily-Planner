@@ -1,16 +1,35 @@
 
 
-
 function currentDate() {
     // console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
-    var time = moment().format('MMMM Do YYYY, h:mm:ss a')
+    var time = moment().format('MMMM Do YYYY, h:mm a')
     $("#today").text(time)
+    console.log(time)
 }
 currentDate()
 
 loadPlanner();
 
+function rowColor() {
+     var currentHour = moment().format('hA');
+    console.log(currentHour)  
+    if(currentHour.charAt(currentHour.length - 2) === "P") {
+    var tempHour = currentHour.split("P");
+    tempHour[0] += 12
+    console.log(tempHour);
+    currentHour = tempHour[0]
+    } else {
+        currentHour = currentHour.split("A")[0]
+    }
+    console.log("final",currentHour)
+    $(`#${currentHour}`).css("background-color","yellow")
+}
+
+
 function loadPlanner() {
+    rowColor();
+
+
     $("#9am").val(localStorage.nine);
     $("#10am").val(localStorage.ten);
     $("#11am").val(localStorage.eleven);
@@ -58,3 +77,4 @@ $("#save").on("click", function (event) {
     localStorage.setItem("five", userInput);
     localStorage.getItem("five");
 });
+
