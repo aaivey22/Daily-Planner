@@ -1,5 +1,5 @@
 
-var hourContent = [""];
+
 
 function currentDate() {
     // console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
@@ -9,12 +9,19 @@ function currentDate() {
 
 currentDate()
 
+loadPlanner();
+
+function loadPlanner() {
+    $("#9am").val(localStorage.nine);
+}
 
 $(".save").on("click", function (event) {
     // event.preventDefault();
 
     var userInput = $("#9am").val().trim();
-    // hourContent.push(userInput); console log works, but this does not?
+localStorage.setItem("nine", userInput);
 
-    // console.log(userInput);
+    // console.log(localStorage);
 });
+console.log(localStorage.getItem("nine"));
+// localStorage.getItem("9");
