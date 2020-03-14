@@ -4,25 +4,33 @@ function currentDate() {
     // console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
     var time = moment().format('MMMM Do YYYY, h:mm a')
     $("#today").text(time)
-    console.log(time)
+    var updateTime = setTimeout(currentDate, 60000)
 }
 currentDate()
 
 loadPlanner();
 
+// rowColor function highlights the current hour and greys out past hours
 function rowColor() {
-     var currentHour = moment().format('hA');
-    console.log(currentHour)  
-    if(currentHour.charAt(currentHour.length - 2) === "P") {
-    var tempHour = currentHour.split("P");
-    tempHour[0] += 12
-    console.log(tempHour);
-    currentHour = tempHour[0]
+    var currentHour = moment().format('hA'); //refrencing moment.js library to retrieve the hr and am/pm
+
+    if (currentHour.charAt(currentHour.length - 2) === "P") { //check if it's pm
+        var tempHour = currentHour.split("P"); //grabs the number value only whehn PM
+
+        currentHour = parseInt(tempHour[0]) + 12 //convert to military time
     } else {
-        currentHour = currentHour.split("A")[0]
+        currentHour = currentHour.split("A")[0] // grabs the number value only when AM
     }
-    console.log("final",currentHour)
-    $(`#${currentHour}`).css("background-color","yellow")
+
+    $(`#${currentHour}`).css("background-color", "yellow")
+
+    // for loops through 9-5 (military time)
+    for (let i = 9; i < 18; i++) {
+        if (i < currentHour) { // if past current hr
+            $(`#${i}`).css("background-color", "rgba(20,20,20,.3)") // apply grey color
+        }
+
+    }
 }
 
 
