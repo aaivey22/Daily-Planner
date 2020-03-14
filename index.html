@@ -12,8 +12,8 @@
 <body>
     <div class="container border-bottom p-5">
         <div id="dateDisplay" class="container text-center">
-            <h1>My Planner</h1>
-            <h3>Some more text here</h3>
+            <h1 class="display-1">My Planner</h1>
+            <h3 class="p-3">Time To Live.</h3>
             <h3 id="today"></h3>
         </div>
     </div>
@@ -21,14 +21,27 @@
     <div class="container pt-5">
         <div class="row">
             <div class="col-1 hour">
-                <h3>9AM</h3>
+                <h3>09AM</h3>
             </div>
             <div class="col-11">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="9am" placeholder="Now I'm Doing This"
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type="text" class="form-control" id="9am" placeholder="Now I'm Doing This">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="save9" type="button">Update</button>
+                        <button class="btn btn-outline-secondary btn-warning" id="save" type="button">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 hour">
+                <h3>10AM</h3>
+            </div>
+            <div class="col-11">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="10am" placeholder="Now I'm Doing This">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary btn-warning" id="save" type="button">Update</button>
                     </div>
                 </div>
             </div>
